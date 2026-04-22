@@ -1,13 +1,34 @@
 {
   "schema": 1,
   "categories": [
-    { "id": "workshop-devs", "label": "AI Workshop for Devs" },
-    { "id": "ai-interactions", "label": "Basic AI Interactions Framework" },
-    { "id": "ai-risk-security", "label": "Basic AI Risk and Secure Practices" },
-    { "id": "ai-fundamentals", "label": "Generative AI Fundamentals 101" },
-    { "id": "software-planning", "label": "Software Planning with AI" },
-    { "id": "software-development", "label": "Software Development with AI" },
-    { "id": "software-operations", "label": "Software Operations with AI" }
+    {
+      "id": "workshop-devs",
+      "label": "AI Workshop for Devs"
+    },
+    {
+      "id": "ai-interactions",
+      "label": "Basic AI Interactions Framework"
+    },
+    {
+      "id": "ai-risk-security",
+      "label": "Basic AI Risk and Secure Practices"
+    },
+    {
+      "id": "ai-fundamentals",
+      "label": "Generative AI Fundamentals 101"
+    },
+    {
+      "id": "software-planning",
+      "label": "Software Planning with AI"
+    },
+    {
+      "id": "software-development",
+      "label": "Software Development with AI"
+    },
+    {
+      "id": "software-operations",
+      "label": "Software Operations with AI"
+    }
   ],
   "questions": [
     {
@@ -16,12 +37,24 @@
       "type": "mcq",
       "prompt": "What is Harness Engineering in the context of coding agents?",
       "options": [
-        { "id": "a", "text": "A deployment strategy for cloud infrastructure" },
-        { "id": "b", "text": "The practice of leveraging coding agent's configuration points to customize and improve output quality" },
-        { "id": "c", "text": "A testing framework for validating API endpoints" },
-        { "id": "d", "text": "A method for packaging dependencies in Docker containers" }
+        {
+          "id": "a",
+          "text": "Configuring a coding agent so its outputs are more reliable and useful"
+        },
+        {
+          "id": "b",
+          "text": "Packaging dependencies into isolated images for consistent builds across environments"
+        },
+        {
+          "id": "c",
+          "text": "Testing whether an API keeps backward-compatible contract behavior over time"
+        },
+        {
+          "id": "d",
+          "text": "Rolling out infrastructure updates gradually across multiple cloud environments"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-agent-components-1",
@@ -29,12 +62,24 @@
       "type": "mcq",
       "prompt": "Which of the following is NOT a standard coding agent configuration point?",
       "options": [
-        { "id": "a", "text": "Skills" },
-        { "id": "b", "text": "Custom (Sub)agents" },
-        { "id": "c", "text": "Hooks" },
-        { "id": "d", "text": "Database Migrations" }
+        {
+          "id": "a",
+          "text": "Skills and references"
+        },
+        {
+          "id": "b",
+          "text": "Database migrations"
+        },
+        {
+          "id": "c",
+          "text": "Hooks and lifecycle scripts"
+        },
+        {
+          "id": "d",
+          "text": "Custom subagents"
+        }
       ],
-      "correctOptionId": "d"
+      "correctOptionId": "b"
     },
     {
       "id": "mcq-mcp-1",
@@ -42,12 +87,24 @@
       "type": "mcq",
       "prompt": "What does MCP stand for and what is its primary purpose?",
       "options": [
-        { "id": "a", "text": "Model Caching Protocol; used to cache model weights locally" },
-        { "id": "b", "text": "Model Context Protocol; an open standard for how LLM apps interact with external services" },
-        { "id": "c", "text": "Multiple Component Parser; used for parsing distributed code" },
-        { "id": "d", "text": "Managed Compute Platform; a cloud infrastructure tool" }
+        {
+          "id": "a",
+          "text": "Managed Compute Platform, a service for provisioning model hardware at scale"
+        },
+        {
+          "id": "b",
+          "text": "Model Caching Protocol, a standard for storing weights and responses locally"
+        },
+        {
+          "id": "c",
+          "text": "Model Context Protocol, a standard for linking LLM apps with external tools"
+        },
+        {
+          "id": "d",
+          "text": "Multiple Component Parser, a specification for analyzing large distributed codebases automatically"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-skills-1",
@@ -55,12 +112,24 @@
       "type": "mcq",
       "prompt": "What is the primary purpose of Agent Skills in a coding agent harness?",
       "options": [
-        { "id": "a", "text": "To execute long-running background jobs in isolation" },
-        { "id": "b", "text": "To provide reusable content, reference docs, and repeatable tasks within the main agent context" },
-        { "id": "c", "text": "To intercept tool calls and run scripted actions" },
-        { "id": "d", "text": "To manage database migrations automatically" }
+        {
+          "id": "a",
+          "text": "To run background jobs outside the main chat session"
+        },
+        {
+          "id": "b",
+          "text": "To intercept every tool call and inject scripted side effects automatically"
+        },
+        {
+          "id": "c",
+          "text": "To apply database schema changes across all connected projects"
+        },
+        {
+          "id": "d",
+          "text": "To supply reusable instructions and references to the main agent"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "mcq-subagent-skills-1",
@@ -68,12 +137,24 @@
       "type": "mcq",
       "prompt": "When should you use a Custom (Sub)agent instead of an Agent Skill?",
       "options": [
-        { "id": "a", "text": "When the task is simple and needs access to all main agent context" },
-        { "id": "b", "text": "When you need context isolation, parallel task execution, or specialized workers" },
-        { "id": "c", "text": "When the task involves file system operations only" },
-        { "id": "d", "text": "When you want to share output with other agents in real-time" }
+        {
+          "id": "a",
+          "text": "When the work needs isolation or a specialized worker"
+        },
+        {
+          "id": "b",
+          "text": "When the task is simple and benefits from full shared context"
+        },
+        {
+          "id": "c",
+          "text": "When the task only involves local file edits in one directory"
+        },
+        {
+          "id": "d",
+          "text": "When every agent must share the same live state at all times"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-hooks-1",
@@ -81,10 +162,22 @@
       "type": "mcq",
       "prompt": "What is the primary use case for Hooks in a coding agent configuration?",
       "options": [
-        { "id": "a", "text": "To replace standard language server functionality" },
-        { "id": "b", "text": "To intercept or trigger scripted actions before/after certain events or conditions" },
-        { "id": "c", "text": "To cache frequently used code snippets" },
-        { "id": "d", "text": "To optimize model inference speed" }
+        {
+          "id": "a",
+          "text": "To replace editor language features such as completion and diagnostics"
+        },
+        {
+          "id": "b",
+          "text": "To run scripted actions around specific events and conditions"
+        },
+        {
+          "id": "c",
+          "text": "To store reusable snippets for faster code generation in future sessions"
+        },
+        {
+          "id": "d",
+          "text": "To cache previous model outputs so answers return with lower latency"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -94,12 +187,24 @@
       "type": "mcq",
       "prompt": "Which of the following is a valid use case for MCP integration with a coding agent?",
       "options": [
-        { "id": "a", "text": "Atlassian MCP to get Jira ticket details and comment on Confluence documents" },
-        { "id": "b", "text": "Grafana MCP to replace monitoring dashboards entirely" },
-        { "id": "c", "text": "Chrome DevTools MCP to automate browser testing only" },
-        { "id": "d", "text": "Context7 MCP to eliminate the need for documentation" }
+        {
+          "id": "a",
+          "text": "Using Grafana MCP as a permanent replacement for every observability tool"
+        },
+        {
+          "id": "b",
+          "text": "Using Chrome DevTools MCP only for browser tests and for nothing else at all"
+        },
+        {
+          "id": "c",
+          "text": "Using Atlassian MCP to read Jira issues and comment in Confluence"
+        },
+        {
+          "id": "d",
+          "text": "Using Context7 MCP so official documentation is no longer needed for developers"
+        }
       ],
-      "correctOptionId": "a"
+      "correctOptionId": "c"
     },
     {
       "id": "ft-harness-1",
@@ -119,12 +224,24 @@
       "type": "mcq",
       "prompt": "What does a Hook with type 'command' do in the context of agent configuration?",
       "options": [
-        { "id": "a", "text": "It executes shell commands in response to agent lifecycle events" },
-        { "id": "b", "text": "It validates command syntax before tool execution" },
-        { "id": "c", "text": "It caches command results for faster retrieval" },
-        { "id": "d", "text": "It restricts which commands the agent can run" }
+        {
+          "id": "a",
+          "text": "It checks whether a command matches an approved syntax pattern"
+        },
+        {
+          "id": "b",
+          "text": "It stores earlier command results so they can be reused later"
+        },
+        {
+          "id": "c",
+          "text": "It limits the agent to a predefined allowlist of shell commands"
+        },
+        {
+          "id": "d",
+          "text": "It executes shell commands when defined lifecycle events occur"
+        }
       ],
-      "correctOptionId": "a"
+      "correctOptionId": "d"
     },
     {
       "id": "ft-mcp-design-1",
@@ -145,12 +262,24 @@
       "type": "mcq",
       "prompt": "In the 4D Framework, what does 'Delegation' refer to?",
       "options": [
-        { "id": "a", "text": "Assigning only humans to project tasks" },
-        { "id": "b", "text": "Balancing AI and human capabilities and assigning project tasks to human and AI tools optimally" },
-        { "id": "c", "text": "Giving all tasks to AI to complete independently" },
-        { "id": "d", "text": "Creating hierarchical team structures for project management" }
+        {
+          "id": "a",
+          "text": "Assigning work between people and AI based on their strengths and limits"
+        },
+        {
+          "id": "b",
+          "text": "Sending every implementation task directly to the model without triage"
+        },
+        {
+          "id": "c",
+          "text": "Keeping planning decisions inside a human-only management chain"
+        },
+        {
+          "id": "d",
+          "text": "Building a formal reporting hierarchy that governs everyone involved in the project"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-prompting-techniques-1",
@@ -158,12 +287,24 @@
       "type": "mcq",
       "prompt": "Which of the following is NOT one of the 6 core prompting techniques mentioned?",
       "options": [
-        { "id": "a", "text": "Give context" },
-        { "id": "b", "text": "Show examples" },
-        { "id": "c", "text": "Specify constraints" },
-        { "id": "d", "text": "Use only external APIs" }
+        {
+          "id": "a",
+          "text": "Give context and examples"
+        },
+        {
+          "id": "b",
+          "text": "Rely only on external APIs"
+        },
+        {
+          "id": "c",
+          "text": "Specify constraints clearly"
+        },
+        {
+          "id": "d",
+          "text": "Show examples and patterns"
+        }
       ],
-      "correctOptionId": "d"
+      "correctOptionId": "b"
     },
     {
       "id": "mcq-discernment-1",
@@ -171,12 +312,24 @@
       "type": "mcq",
       "prompt": "What does 'Process Discernment' evaluate in AI collaboration?",
       "options": [
-        { "id": "a", "text": "Only the accuracy of the final output" },
-        { "id": "b", "text": "How the AI behaves within the collaboration process and communication effectiveness" },
-        { "id": "c", "text": "The speed of execution" },
-        { "id": "d", "text": "The cost of running the model" }
+        {
+          "id": "a",
+          "text": "Whether the final answer is factually correct and nothing more"
+        },
+        {
+          "id": "b",
+          "text": "Primarily how much runtime cost the chosen model incurred"
+        },
+        {
+          "id": "c",
+          "text": "How the AI behaved in the workflow"
+        },
+        {
+          "id": "d",
+          "text": "Whether the model finished the task as quickly as possible"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-product-discernment-1",
@@ -184,12 +337,24 @@
       "type": "mcq",
       "prompt": "What is 'Product Discernment' in the context of evaluating AI outputs?",
       "options": [
-        { "id": "a", "text": "Assessing the speed of output generation" },
-        { "id": "b", "text": "Evaluating the quality of actual outputs including accuracy, appropriateness, coherence, and relevance" },
-        { "id": "c", "text": "Measuring cost efficiency of the AI tool" },
-        { "id": "d", "text": "Comparing different AI model versions" }
+        {
+          "id": "a",
+          "text": "Comparing one model release with another on benchmark scores alone"
+        },
+        {
+          "id": "b",
+          "text": "Estimating how expensive the generated answer was to produce in total"
+        },
+        {
+          "id": "c",
+          "text": "Measuring how quickly the system can return a response to the user"
+        },
+        {
+          "id": "d",
+          "text": "Assessing the output for accuracy, relevance, coherence, and fit"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "mcq-core-loop-1",
@@ -197,12 +362,24 @@
       "type": "mcq",
       "prompt": "What is the sequence in the Core Loop for improving AI collaboration?",
       "options": [
-        { "id": "a", "text": "Revise → Specify → Explain → Suggest" },
-        { "id": "b", "text": "Specify the problem → Explain why → Suggest improvements → Revise instructions" },
-        { "id": "c", "text": "Test → Deploy → Monitor → Update" },
-        { "id": "d", "text": "Collect → Analyze → Report → Archive" }
+        {
+          "id": "a",
+          "text": "State the problem, explain it, suggest fixes, then revise the prompt"
+        },
+        {
+          "id": "b",
+          "text": "Collect facts, analyze findings, report results, then archive the work"
+        },
+        {
+          "id": "c",
+          "text": "Revise the answer, restate the problem, justify it, then redeploy"
+        },
+        {
+          "id": "d",
+          "text": "Test the output, deploy changes, monitor behavior, then update models"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-platform-awareness-1",
@@ -210,10 +387,22 @@
       "type": "mcq",
       "prompt": "What does 'Platform Awareness' in the 4D Framework require?",
       "options": [
-        { "id": "a", "text": "Using only open-source tools and avoiding commercial AI services" },
-        { "id": "b", "text": "Knowledge of AI platforms' strengths, limitations, and how they align with project requirements, budget, and regulations" },
-        { "id": "c", "text": "Mastering every AI tool available on the market" },
-        { "id": "d", "text": "Creating a separate team dedicated to tool evaluation" }
+        {
+          "id": "a",
+          "text": "Knowing every AI product well enough to use all of them in practice"
+        },
+        {
+          "id": "b",
+          "text": "Understanding platform strengths, limits, and fit with constraints"
+        },
+        {
+          "id": "c",
+          "text": "Using only open-source tools to avoid vendor lock-in in every case"
+        },
+        {
+          "id": "d",
+          "text": "Creating a dedicated team whose sole job is model procurement and contracting"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -249,12 +438,24 @@
       "type": "mcq",
       "prompt": "What is a direct prompt injection attack?",
       "options": [
-        { "id": "a", "text": "Malicious instructions hidden in external content processed by the LLM" },
-        { "id": "b", "text": "Explicit malicious instructions in user input attempting to override system prompts" },
-        { "id": "c", "text": "Using a compromised API key to access the model" },
-        { "id": "d", "text": "Overloading the context window with excess data" }
+        {
+          "id": "a",
+          "text": "Malicious instructions hidden inside external content that the model reads"
+        },
+        {
+          "id": "b",
+          "text": "Using a stolen API credential to issue unauthorized model requests"
+        },
+        {
+          "id": "c",
+          "text": "A user directly telling the model to ignore higher-priority instructions"
+        },
+        {
+          "id": "d",
+          "text": "Filling the context window with more tokens than the model can process"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-indirect-injection-1",
@@ -262,12 +463,24 @@
       "type": "mcq",
       "prompt": "Which of the following is an example of an indirect prompt injection attack vector?",
       "options": [
-        { "id": "a", "text": "Typing 'ignore all previous instructions' in a user input" },
-        { "id": "b", "text": "Malicious code comments or documentation that AI assistants analyze" },
-        { "id": "c", "text": "Using a password that is too weak" },
-        { "id": "d", "text": "Requesting an older model version" }
+        {
+          "id": "a",
+          "text": "Typing 'ignore previous instructions' directly into the chat interface"
+        },
+        {
+          "id": "b",
+          "text": "Requesting an older model release with weaker safety settings"
+        },
+        {
+          "id": "c",
+          "text": "Using a weak password on an account connected to the application's admin panel"
+        },
+        {
+          "id": "d",
+          "text": "Instructions hidden in comments or docs the assistant reads"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "mcq-excessive-agency-1",
@@ -275,12 +488,24 @@
       "type": "mcq",
       "prompt": "What is Excessive Agency in the context of LLM systems?",
       "options": [
-        { "id": "a", "text": "Using too many AI models in a single project" },
-        { "id": "b", "text": "Giving access to an LLM that enables damaging actions in response to unexpected or manipulated outputs" },
-        { "id": "c", "text": "Training multiple agents on the same dataset" },
-        { "id": "d", "text": "Limiting user access to AI systems" }
+        {
+          "id": "a",
+          "text": "Giving a model tools or authority that can cause harm if it is wrong"
+        },
+        {
+          "id": "b",
+          "text": "Training several AI agents on the same internal dataset at once"
+        },
+        {
+          "id": "c",
+          "text": "Running too many different model families in a single product"
+        },
+        {
+          "id": "d",
+          "text": "Restricting model access so heavily that users cannot benefit from it"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-obfuscation-1",
@@ -288,10 +513,22 @@
       "type": "mcq",
       "prompt": "Which technique is used to obfuscate prompt injection attacks and bypass keyword-based filters?",
       "options": [
-        { "id": "a", "text": "SSL/TLS encryption over network" },
-        { "id": "b", "text": "Base64, hex encoding, or typoglycemia-based attacks (scrambled words)" },
-        { "id": "c", "text": "Rate limiting API requests" },
-        { "id": "d", "text": "Using authentication tokens" }
+        {
+          "id": "a",
+          "text": "Transport encryption such as TLS between the client and the server"
+        },
+        {
+          "id": "b",
+          "text": "Base64, hex encoding, or typoglycemia-style text scrambling"
+        },
+        {
+          "id": "c",
+          "text": "API rate limiting to reduce bursts of malicious request traffic"
+        },
+        {
+          "id": "d",
+          "text": "Bearer-token authentication for authorized access to the model"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -301,12 +538,24 @@
       "type": "mcq",
       "prompt": "What is the primary risk when submitting sensitive customer information to an LLM application?",
       "options": [
-        { "id": "a", "text": "The model will always refuse to process it" },
-        { "id": "b", "text": "The AI app owner may use it to improve/train models, potentially leaking information" },
-        { "id": "c", "text": "The request will timeout due to data size" },
-        { "id": "d", "text": "The model will guarantee perfect privacy protection" }
+        {
+          "id": "a",
+          "text": "The request will usually fail because the payload is too large to process"
+        },
+        {
+          "id": "b",
+          "text": "The model will always reject the request before any processing occurs"
+        },
+        {
+          "id": "c",
+          "text": "The app owner may retain or reuse the data in unsafe ways"
+        },
+        {
+          "id": "d",
+          "text": "The model automatically guarantees confidentiality in every product"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "ft-prompt-injection-mitigation-1",
@@ -341,12 +590,24 @@
       "type": "mcq",
       "prompt": "What is a knowledge cutoff in the context of LLMs?",
       "options": [
-        { "id": "a", "text": "The maximum number of tokens the model can process" },
-        { "id": "b", "text": "The freshness limit of the training data; models cannot know recent events" },
-        { "id": "c", "text": "A mechanism to prevent hallucinations" },
-        { "id": "d", "text": "The point where the model stops generating new tokens" }
+        {
+          "id": "a",
+          "text": "The largest prompt the model can accept before it starts truncating tokens"
+        },
+        {
+          "id": "b",
+          "text": "A built-in safety mechanism that prevents the model from hallucinating"
+        },
+        {
+          "id": "c",
+          "text": "The point where the generator stops producing additional output tokens"
+        },
+        {
+          "id": "d",
+          "text": "The point after which the model lacks newer information"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "mcq-hallucination-1",
@@ -354,12 +615,24 @@
       "type": "mcq",
       "prompt": "Which of the following is the BEST mitigation for LLM hallucinations?",
       "options": [
-        { "id": "a", "text": "Always use larger models" },
-        { "id": "b", "text": "Improve input context with clear instructions, examples, and tools like RAG or specialized MCPs" },
-        { "id": "c", "text": "Disable all external tool access" },
-        { "id": "d", "text": "Use the same prompt every time without variation" }
+        {
+          "id": "a",
+          "text": "Use clear context, examples, and trusted retrieval"
+        },
+        {
+          "id": "b",
+          "text": "Disable all external tools so the model must answer only from memory"
+        },
+        {
+          "id": "c",
+          "text": "Reuse the same generic prompt for every task without adaptation"
+        },
+        {
+          "id": "d",
+          "text": "Always move to a larger model regardless of the specific use case"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-rag-1",
@@ -367,10 +640,22 @@
       "type": "mcq",
       "prompt": "What is RAG (Retrieval-Augmented Generation) designed to address?",
       "options": [
-        { "id": "a", "text": "Speeding up model inference" },
-        { "id": "b", "text": "Reducing hallucinations by injecting relevant context from trusted sources instead of relying on training data" },
-        { "id": "c", "text": "Replacing all human oversight" },
-        { "id": "d", "text": "Eliminating the need for testing" }
+        {
+          "id": "a",
+          "text": "Making inference faster by shrinking the prompt at runtime"
+        },
+        {
+          "id": "b",
+          "text": "Reducing hallucinations by grounding answers in retrieved context"
+        },
+        {
+          "id": "c",
+          "text": "Removing the need for reviewers and other human oversight"
+        },
+        {
+          "id": "d",
+          "text": "Replacing testing with retrieval from current production documentation alone"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -380,12 +665,24 @@
       "type": "mcq",
       "prompt": "What does 'context window' refer to in LLM systems?",
       "options": [
-        { "id": "a", "text": "The time interval during which the model can process requests" },
-        { "id": "b", "text": "The 'working memory' or amount of information the model can actively keep in mind for complex logic" },
-        { "id": "c", "text": "The historical record of past model outputs" },
-        { "id": "d", "text": "The graphical interface for user interactions" }
+        {
+          "id": "a",
+          "text": "How long a user session stays active in the chat interface"
+        },
+        {
+          "id": "b",
+          "text": "A log of all previous responses the model has produced in the app"
+        },
+        {
+          "id": "c",
+          "text": "The amount of information the model can consider at one time"
+        },
+        {
+          "id": "d",
+          "text": "The graphical panel where a user writes prompts to the assistant"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-non-deterministic-1",
@@ -393,12 +690,24 @@
       "type": "mcq",
       "prompt": "Why is the non-deterministic nature of LLM outputs a concern in certain applications?",
       "options": [
-        { "id": "a", "text": "It makes models impossible to train" },
-        { "id": "b", "text": "Different responses to the same prompt are great for creativity but risky for accuracy-critical applications" },
-        { "id": "c", "text": "It prevents models from learning patterns" },
-        { "id": "d", "text": "It eliminates the need for validation" }
+        {
+          "id": "a",
+          "text": "It prevents the model from learning stable language patterns during training"
+        },
+        {
+          "id": "b",
+          "text": "It makes it impossible to validate or monitor model behavior at all"
+        },
+        {
+          "id": "c",
+          "text": "It means the model cannot produce creative or exploratory responses"
+        },
+        {
+          "id": "d",
+          "text": "The same prompt can produce different answers in accuracy-critical work"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "ft-generative-vs-discriminative-1",
@@ -432,12 +741,24 @@
       "type": "mcq",
       "prompt": "When using AI to help with software planning, what should be the primary focus before delegating tasks to the AI?",
       "options": [
-        { "id": "a", "text": "Getting the AI to write code immediately" },
-        { "id": "b", "text": "Clearly defining project goals, requirements, and constraints" },
-        { "id": "c", "text": "Minimizing human involvement in the process" },
-        { "id": "d", "text": "Using the most advanced model available" }
+        {
+          "id": "a",
+          "text": "Clarify goals, requirements, and constraints before involving AI"
+        },
+        {
+          "id": "b",
+          "text": "Start with implementation details so the model has code to discuss immediately"
+        },
+        {
+          "id": "c",
+          "text": "Use the most advanced model available before clarifying the problem space"
+        },
+        {
+          "id": "d",
+          "text": "Reduce human involvement early so the plan reflects the model's first instincts"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-planning-discernment-1",
@@ -445,10 +766,22 @@
       "type": "mcq",
       "prompt": "How does the concept of Platform Awareness contribute to effective AI-assisted software planning?",
       "options": [
-        { "id": "a", "text": "It ensures the team uses only open-source tools" },
-        { "id": "b", "text": "It enables evaluation of AI tools based on project requirements, budget, and regulatory needs" },
-        { "id": "c", "text": "It replaces the need for project managers" },
-        { "id": "d", "text": "It automates all planning decisions" }
+        {
+          "id": "a",
+          "text": "It automates planning decisions so the team can move without review"
+        },
+        {
+          "id": "b",
+          "text": "It helps teams choose tools that fit needs, budget, and regulation"
+        },
+        {
+          "id": "c",
+          "text": "It ensures that only open-source AI tools are considered in planning"
+        },
+        {
+          "id": "d",
+          "text": "It removes the need for project managers to coordinate planning work"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -458,12 +791,24 @@
       "type": "mcq",
       "prompt": "In AI-assisted planning, why is understanding 'Goal & Task Awareness' important?",
       "options": [
-        { "id": "a", "text": "It helps only the AI understand what to do" },
-        { "id": "b", "text": "It ensures humans understand task requirements before delegating to AI, reducing misaligned solutions" },
-        { "id": "c", "text": "It eliminates the need for specification documents" },
-        { "id": "d", "text": "It speeds up planning by removing clarity requirements" }
+        {
+          "id": "a",
+          "text": "It eliminates the need to write specifications before planning begins"
+        },
+        {
+          "id": "b",
+          "text": "It helps the model improvise missing requirements as it plans the work"
+        },
+        {
+          "id": "c",
+          "text": "It ensures people understand the task before delegation"
+        },
+        {
+          "id": "d",
+          "text": "It speeds planning by making detailed clarification unnecessary"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-planning-brainstorm-1",
@@ -471,12 +816,24 @@
       "type": "mcq",
       "prompt": "What is a strength of using AI for brainstorming in software planning?",
       "options": [
-        { "id": "a", "text": "It always produces optimal solutions" },
-        { "id": "b", "text": "It can rapidly generate multiple perspectives and ideas, which humans then evaluate" },
-        { "id": "c", "text": "It eliminates the need for expert judgment" },
-        { "id": "d", "text": "It guarantees all ideas are novel and untested" }
+        {
+          "id": "a",
+          "text": "It guarantees that every idea will be original and immediately workable"
+        },
+        {
+          "id": "b",
+          "text": "It replaces the need for subject-matter experts during early planning"
+        },
+        {
+          "id": "c",
+          "text": "It consistently finds the single best solution on the first attempt"
+        },
+        {
+          "id": "d",
+          "text": "It can rapidly surface several ideas and perspectives for review"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "ft-planning-with-ai-1",
@@ -510,12 +867,24 @@
       "type": "mcq",
       "prompt": "Which prompting technique is most critical when asking AI to generate code for a production system?",
       "options": [
-        { "id": "a", "text": "Asking for the fastest possible solution" },
-        { "id": "b", "text": "Breaking complex tasks into steps and specifying constraints (security, performance, standards)" },
-        { "id": "c", "text": "Providing minimal context to test the AI's knowledge" },
-        { "id": "d", "text": "Using vague instructions to encourage creativity" }
+        {
+          "id": "a",
+          "text": "Break the task into steps and state key constraints"
+        },
+        {
+          "id": "b",
+          "text": "Ask for the fastest possible implementation regardless of trade-offs"
+        },
+        {
+          "id": "c",
+          "text": "Provide as little context as possible to test the model's baseline skill"
+        },
+        {
+          "id": "d",
+          "text": "Keep the prompt intentionally vague so the model has more creative freedom"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-dev-hallucination-1",
@@ -523,10 +892,22 @@
       "type": "mcq",
       "prompt": "Why is using Context7 MCP beneficial when asking AI to write code with specific libraries or frameworks?",
       "options": [
-        { "id": "a", "text": "It speeds up code generation" },
-        { "id": "b", "text": "It provides up-to-date documentation to reduce hallucinations and ensure correct API usage" },
-        { "id": "c", "text": "It eliminates the need for testing" },
-        { "id": "d", "text": "It makes the code automatically secure" }
+        {
+          "id": "a",
+          "text": "It automatically hardens generated code against every common security flaw"
+        },
+        {
+          "id": "b",
+          "text": "It gives current docs so the model uses real APIs"
+        },
+        {
+          "id": "c",
+          "text": "It removes the need for builds, tests, and coverage checks in CI"
+        },
+        {
+          "id": "d",
+          "text": "It mainly improves generation speed by caching framework examples"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -536,12 +917,24 @@
       "type": "mcq",
       "prompt": "What is the biggest risk when using AI to generate code without providing sufficient framework/library documentation?",
       "options": [
-        { "id": "a", "text": "The code will be slower than hand-written code" },
-        { "id": "b", "text": "AI may hallucinate function names, APIs, or methods that don't actually exist" },
-        { "id": "c", "text": "The AI will refuse to generate any code" },
-        { "id": "d", "text": "The code will violate all security standards" }
+        {
+          "id": "a",
+          "text": "The generated code will always run more slowly than hand-written code"
+        },
+        {
+          "id": "b",
+          "text": "The model will refuse to answer because the prompt lacks documentation"
+        },
+        {
+          "id": "c",
+          "text": "The AI may invent methods or APIs that do not really exist"
+        },
+        {
+          "id": "d",
+          "text": "The result will necessarily violate every security requirement in the stack"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-testing-1",
@@ -549,12 +942,24 @@
       "type": "mcq",
       "prompt": "Which validation mechanism is most effective for catching hallucinated API usage in AI-generated code?",
       "options": [
-        { "id": "a", "text": "Code style checking only" },
-        { "id": "b", "text": "Automated build/compile and unit tests, combined with static analysis comparing against official docs" },
-        { "id": "c", "text": "Human code review only" },
-        { "id": "d", "text": "Deployment monitoring after release" }
+        {
+          "id": "a",
+          "text": "Relying on style rules alone to surface suspicious code patterns"
+        },
+        {
+          "id": "b",
+          "text": "Depending only on human review after the code is already merged"
+        },
+        {
+          "id": "c",
+          "text": "Watching production telemetry after release for unexpected failures"
+        },
+        {
+          "id": "d",
+          "text": "Running builds, tests, and static checks against official APIs"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "ft-dev-quality-gates-1",
@@ -589,12 +994,24 @@
       "type": "mcq",
       "prompt": "When using AI to assist with incident response, what is the primary risk if the AI tool has Excessive Agency?",
       "options": [
-        { "id": "a", "text": "The AI might generate inaccurate status reports" },
-        { "id": "b", "text": "The AI might take destructive actions (e.g., terminating instances) based on misinterpreted output" },
-        { "id": "c", "text": "The AI might slow down the response time" },
-        { "id": "d", "text": "The AI might require too much context" }
+        {
+          "id": "a",
+          "text": "It could take harmful actions from a bad conclusion"
+        },
+        {
+          "id": "b",
+          "text": "It will require more context than the on-call team can reasonably provide"
+        },
+        {
+          "id": "c",
+          "text": "It may write status updates that are less polished than a human's"
+        },
+        {
+          "id": "d",
+          "text": "It will inevitably slow the response process in every incident"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-grafana-mcp-1",
@@ -602,10 +1019,22 @@
       "type": "mcq",
       "prompt": "How does Grafana MCP enhance an AI agent's capability for incident response?",
       "options": [
-        { "id": "a", "text": "It replaces human on-call engineers" },
-        { "id": "b", "text": "It allows the AI to query logs, metrics, and even create dashboards automatically for faster analysis" },
-        { "id": "c", "text": "It eliminates the need for monitoring systems" },
-        { "id": "d", "text": "It encrypts all communications" }
+        {
+          "id": "a",
+          "text": "It replaces human responders so incidents can be handled without on-call staff"
+        },
+        {
+          "id": "b",
+          "text": "It lets the agent query logs and metrics and build dashboards"
+        },
+        {
+          "id": "c",
+          "text": "It removes the need for a monitoring stack once connected to the agent"
+        },
+        {
+          "id": "d",
+          "text": "It secures all operational traffic by encrypting system communications"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -615,12 +1044,24 @@
       "type": "mcq",
       "prompt": "What is 'least privilege' access in the context of AI-assisted operations?",
       "options": [
-        { "id": "a", "text": "Giving the AI access to all production systems for efficiency" },
-        { "id": "b", "text": "Limiting AI access to only the minimal tools and data needed for its specific tasks" },
-        { "id": "c", "text": "Preventing the AI from accessing any production systems" },
-        { "id": "d", "text": "Granting administrative privileges after proving reliability" }
+        {
+          "id": "a",
+          "text": "Giving the agent broad production access so incidents can be fixed faster"
+        },
+        {
+          "id": "b",
+          "text": "Blocking the agent from production entirely regardless of the use case"
+        },
+        {
+          "id": "c",
+          "text": "Granting only the minimal tools and data required for the task"
+        },
+        {
+          "id": "d",
+          "text": "Allowing administrative rights once the model has a strong track record"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-whitelist-1",
@@ -628,12 +1069,24 @@
       "type": "mcq",
       "prompt": "Why is whitelisting safe commands critical for AI-assisted infrastructure management?",
       "options": [
-        { "id": "a", "text": "It speeds up command execution" },
-        { "id": "b", "text": "It prevents the AI from accidentally executing dangerous or destructive commands" },
-        { "id": "c", "text": "It eliminates the need for backups" },
-        { "id": "d", "text": "It removes the need for human oversight" }
+        {
+          "id": "a",
+          "text": "It improves command throughput by reducing shell startup overhead"
+        },
+        {
+          "id": "b",
+          "text": "It removes the need for approvals because the list was reviewed once"
+        },
+        {
+          "id": "c",
+          "text": "It makes backups unnecessary because command risk is already controlled"
+        },
+        {
+          "id": "d",
+          "text": "It reduces the chance that the AI can run destructive commands"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "ft-operations-safe-automation-1",
@@ -668,12 +1121,24 @@
       "type": "mcq",
       "prompt": "What is the relationship between Agent Skills and Custom (Sub)agents in a harness architecture?",
       "options": [
-        { "id": "a", "text": "They are interchangeable and serve the same purpose" },
-        { "id": "b", "text": "Skills are lightweight reusable prompts in main context; Subagents are isolated workers with their own execution environment" },
-        { "id": "c", "text": "Skills are only for external APIs; Subagents are only for code generation" },
-        { "id": "d", "text": "Subagents replace Skills entirely in modern systems" }
+        {
+          "id": "a",
+          "text": "Skills use shared context, while subagents stay isolated"
+        },
+        {
+          "id": "b",
+          "text": "They are interchangeable components that differ only in naming"
+        },
+        {
+          "id": "c",
+          "text": "Skills are only for APIs, while subagents are only for writing code"
+        },
+        {
+          "id": "d",
+          "text": "Subagents fully replace skills in modern harness designs"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "mcq-workshop-prettier-1",
@@ -681,10 +1146,22 @@
       "type": "mcq",
       "prompt": "In the Prettier hook example, what PostToolUse hook accomplishes?",
       "options": [
-        { "id": "a", "text": "It prevents certain tools from being used" },
-        { "id": "b", "text": "It automatically formats edited files using Prettier after tool use" },
-        { "id": "c", "text": "It audits all tool calls for security" },
-        { "id": "d", "text": "It caches formatted output for reuse" }
+        {
+          "id": "a",
+          "text": "It blocks the agent from invoking tools that are not approved in the editor"
+        },
+        {
+          "id": "b",
+          "text": "It formats edited files with Prettier after the relevant tool runs"
+        },
+        {
+          "id": "c",
+          "text": "It sends each tool call to an audit service for security review"
+        },
+        {
+          "id": "d",
+          "text": "It caches earlier formatting results so they can be reused later"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -720,12 +1197,24 @@
       "type": "mcq",
       "prompt": "When designing a collaboration with AI for deterministic tasks (e.g., code generation), how does 'temperature' setting relate to the 6 prompting techniques?",
       "options": [
-        { "id": "a", "text": "Temperature is the same as prompt engineering; no difference" },
-        { "id": "b", "text": "Lower temperature reduces creativity but works with techniques like constraints and examples for reliability" },
-        { "id": "c", "text": "Temperature has no effect on prompting quality" },
-        { "id": "d", "text": "Higher temperature always produces better results regardless of prompting" }
+        {
+          "id": "a",
+          "text": "Temperature has no meaningful effect once a prompt includes examples"
+        },
+        {
+          "id": "b",
+          "text": "Higher temperature is always better because it increases idea diversity"
+        },
+        {
+          "id": "c",
+          "text": "Lower temperature supports reliable, constrained output"
+        },
+        {
+          "id": "d",
+          "text": "Temperature and prompt design are the same control expressed differently"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-risk-security-misinformation-1",
@@ -733,12 +1222,24 @@
       "type": "mcq",
       "prompt": "What is 'Misinformation' as a risk in LLM systems?",
       "options": [
-        { "id": "a", "text": "Information that is intentionally provided by the user" },
-        { "id": "b", "text": "LLMs generating content that sounds plausible but is actually false or incorrect" },
-        { "id": "c", "text": "Encrypted data that cannot be accessed" },
-        { "id": "d", "text": "Information lost due to context window limits" }
+        {
+          "id": "a",
+          "text": "Information that a user intentionally supplies during a conversation"
+        },
+        {
+          "id": "b",
+          "text": "Data that becomes inaccessible because it was encrypted in storage"
+        },
+        {
+          "id": "c",
+          "text": "Knowledge that is lost because the context window is too small"
+        },
+        {
+          "id": "d",
+          "text": "Plausible-sounding model output that is actually false"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "mcq-risk-misinformation-mitigation-1",
@@ -746,10 +1247,22 @@
       "type": "mcq",
       "prompt": "Which combination of mitigations is most effective against LLM misinformation?",
       "options": [
-        { "id": "a", "text": "Retrieval-Augmented Generation (RAG) + Human Oversight + Automatic Validation" },
-        { "id": "b", "text": "Using only larger models" },
-        { "id": "c", "text": "Disabling all AI tools" },
-        { "id": "d", "text": "Trusting AI outputs without verification" }
+        {
+          "id": "a",
+          "text": "RAG, human oversight, and automated validation together"
+        },
+        {
+          "id": "b",
+          "text": "A larger model with retrieval and reviews removed from the process"
+        },
+        {
+          "id": "c",
+          "text": "Disabling every AI tool so no model output is ever produced"
+        },
+        {
+          "id": "d",
+          "text": "Trusting answers by default unless a customer later reports a problem"
+        }
       ],
       "correctOptionId": "a"
     },
@@ -772,10 +1285,22 @@
       "type": "mcq",
       "prompt": "What is 'Next Token Prediction' and why is it a key capability of LLMs like GPT-style models?",
       "options": [
-        { "id": "a", "text": "A mechanism to skip over irrelevant context" },
-        { "id": "b", "text": "Most LLMs use transformer models that predict the next token, enabling sequential generation of text" },
-        { "id": "c", "text": "A method to cache frequently used phrases" },
-        { "id": "d", "text": "A way to guarantee deterministic outputs" }
+        {
+          "id": "a",
+          "text": "A method for skipping irrelevant context during response generation"
+        },
+        {
+          "id": "b",
+          "text": "Predicting the next token in a sequence"
+        },
+        {
+          "id": "c",
+          "text": "A way to guarantee identical outputs from the same prompt every time"
+        },
+        {
+          "id": "d",
+          "text": "A caching mechanism for phrases that repeat in model output"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -785,12 +1310,24 @@
       "type": "mcq",
       "prompt": "What does 'Scaling Laws' in the context of Generative AI refer to?",
       "options": [
-        { "id": "a", "text": "Methods for distributing AI inference across multiple servers" },
-        { "id": "b", "text": "Emergent capabilities appear as compute and data grow larger" },
-        { "id": "c", "text": "The time it takes to train a model" },
-        { "id": "d", "text": "The cost of running AI models in the cloud" }
+        {
+          "id": "a",
+          "text": "Techniques for spreading inference traffic across a fleet of model servers"
+        },
+        {
+          "id": "b",
+          "text": "The time budget needed to complete a single training run"
+        },
+        {
+          "id": "c",
+          "text": "Capabilities improving as model size, data, and compute increase"
+        },
+        {
+          "id": "d",
+          "text": "The cloud cost profile of serving large generative models in production"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-fundamentals-clear-instructions-1",
@@ -798,12 +1335,24 @@
       "type": "mcq",
       "prompt": "Why are clear, specific instructions critical for reducing LLM hallucinations?",
       "options": [
-        { "id": "a", "text": "They eliminate the need for any validation" },
-        { "id": "b", "text": "Vague instructions cause the AI to guess what you want, increasing hallucination risk" },
-        { "id": "c", "text": "Clear instructions guarantee perfect outputs" },
-        { "id": "d", "text": "Instructions have no effect on hallucinations" }
+        {
+          "id": "a",
+          "text": "They remove the need to validate outputs before using them"
+        },
+        {
+          "id": "b",
+          "text": "They guarantee a perfect answer regardless of context quality"
+        },
+        {
+          "id": "c",
+          "text": "They matter less than randomness settings once a model is large enough"
+        },
+        {
+          "id": "d",
+          "text": "They reduce guessing by making the request specific"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "mcq-planning-requirements-analysis-1",
@@ -811,12 +1360,24 @@
       "type": "mcq",
       "prompt": "What is a key limitation of using AI for requirements analysis in software planning?",
       "options": [
-        { "id": "a", "text": "AI is always perfect at understanding requirements" },
-        { "id": "b", "text": "AI may hallucinate requirements that don't exist or misinterpret stakeholder intent" },
-        { "id": "c", "text": "AI cannot process text-based requirements" },
-        { "id": "d", "text": "AI is faster than humans at all requirements work" }
+        {
+          "id": "a",
+          "text": "AI may invent requirements or misread stakeholder intent without context"
+        },
+        {
+          "id": "b",
+          "text": "AI cannot read or summarize text-based requirement documents at all"
+        },
+        {
+          "id": "c",
+          "text": "AI is inherently perfect at interpreting stakeholder expectations correctly"
+        },
+        {
+          "id": "d",
+          "text": "AI is always faster than humans, so quality trade-offs do not matter"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "ft-planning-stakeholder-engagement-1",
@@ -837,10 +1398,22 @@
       "type": "mcq",
       "prompt": "What is the main risk of relying solely on automated testing for AI-generated code without human code review?",
       "options": [
-        { "id": "a", "text": "Automated tests are always comprehensive" },
-        { "id": "b", "text": "Tests may miss architectural issues, hallucinated APIs, and security flaws not caught by unit tests" },
-        { "id": "c", "text": "Human review is unnecessary for AI code" },
-        { "id": "d", "text": "Automated tests guarantee production readiness" }
+        {
+          "id": "a",
+          "text": "Automated tests usually make builds too slow for modern teams"
+        },
+        {
+          "id": "b",
+          "text": "Tests can miss flaws, security gaps, or invented APIs"
+        },
+        {
+          "id": "c",
+          "text": "Human review becomes impossible once tests have already run in CI"
+        },
+        {
+          "id": "d",
+          "text": "Passing tests always means the code is fully ready for production"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -863,12 +1436,24 @@
       "type": "mcq",
       "prompt": "How can Chrome DevTools MCP be used in AI-assisted operations?",
       "options": [
-        { "id": "a", "text": "Only for frontend development tasks" },
-        { "id": "b", "text": "To control browser, take screenshots, test app flows, and debug JavaScript failures" },
-        { "id": "c", "text": "To replace server-side monitoring" },
-        { "id": "d", "text": "To encrypt all browser traffic" }
+        {
+          "id": "a",
+          "text": "To replace back-end monitoring and database observability across the stack"
+        },
+        {
+          "id": "b",
+          "text": "To encrypt browser traffic so production sessions are automatically protected"
+        },
+        {
+          "id": "c",
+          "text": "To drive a browser, capture screenshots, and inspect client-side failures"
+        },
+        {
+          "id": "d",
+          "text": "To support only front-end feature work and not operational troubleshooting"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "mcq-ops-audit-logging-1",
@@ -876,12 +1461,24 @@
       "type": "mcq",
       "prompt": "Why is audit logging of AI tool calls essential in production operations?",
       "options": [
-        { "id": "a", "text": "It slows down operations unnecessarily" },
-        { "id": "b", "text": "It tracks what actions AI took for compliance, debugging, and detecting excessive agency patterns" },
-        { "id": "c", "text": "It eliminates the need for human monitoring" },
-        { "id": "d", "text": "It guarantees AI decisions are always correct" }
+        {
+          "id": "a",
+          "text": "It mainly slows the system, which keeps the agent from acting too fast"
+        },
+        {
+          "id": "b",
+          "text": "It guarantees every AI action will be correct because it was recorded"
+        },
+        {
+          "id": "c",
+          "text": "It replaces the need for humans to review production incidents"
+        },
+        {
+          "id": "d",
+          "text": "It provides traceability for compliance, debugging, and risk detection"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "ft-ops-monitoring-strategy-1",
@@ -902,12 +1499,24 @@
       "type": "mcq",
       "prompt": "What distinguishes Atlassian MCP from Grafana MCP in terms of agent capabilities?",
       "options": [
-        { "id": "a", "text": "Atlassian MCP only works with GitHub; Grafana MCP works with all systems" },
-        { "id": "b", "text": "Atlassian MCP accesses project/documentation data (Jira, Confluence); Grafana MCP queries logs, metrics, and observability" },
-        { "id": "c", "text": "They provide identical capabilities" },
-        { "id": "d", "text": "Grafana MCP is for code only; Atlassian MCP is for operations" }
+        {
+          "id": "a",
+          "text": "Atlassian MCP handles work items, while Grafana MCP handles observability"
+        },
+        {
+          "id": "b",
+          "text": "Atlassian MCP works only with GitHub, while Grafana MCP works with every platform"
+        },
+        {
+          "id": "c",
+          "text": "Both MCPs expose the same capabilities and differ mainly in naming"
+        },
+        {
+          "id": "d",
+          "text": "Grafana MCP is for code tasks only, while Atlassian MCP is only for operations"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "ft-workshop-hook-scenario-1",
@@ -928,10 +1537,22 @@
       "type": "mcq",
       "prompt": "According to the 4D Framework documentation, why do vague prompts increase hallucination risk?",
       "options": [
-        { "id": "a", "text": "Vague prompts use fewer tokens" },
-        { "id": "b", "text": "The AI guesses what you want, increasing likelihood of incorrect assumptions" },
-        { "id": "c", "text": "Vague prompts decrease model performance metrics" },
-        { "id": "d", "text": "Vague prompts always produce correct results" }
+        {
+          "id": "a",
+          "text": "They usually use fewer tokens, which makes the model more unstable"
+        },
+        {
+          "id": "b",
+          "text": "They force the model to guess missing intent and fill in assumptions"
+        },
+        {
+          "id": "c",
+          "text": "They directly lower benchmark performance scores on every model family"
+        },
+        {
+          "id": "d",
+          "text": "They always lead to correct answers, but with weaker explanations"
+        }
       ],
       "correctOptionId": "b"
     },
@@ -955,12 +1576,24 @@
       "type": "mcq",
       "prompt": "Which obfuscation technique is the hardest for standard keyword-matching filters to detect in prompt injection attacks?",
       "options": [
-        { "id": "a", "text": "Simple Base64 encoding" },
-        { "id": "b", "text": "Typoglycemia (scrambled middle letters with correct first/last)" },
-        { "id": "c", "text": "Replacing spaces with underscores" },
-        { "id": "d", "text": "Using lowercase instead of uppercase" }
+        {
+          "id": "a",
+          "text": "Simple Base64 encoding of an otherwise obvious malicious instruction string embedded in text"
+        },
+        {
+          "id": "b",
+          "text": "Replacing spaces with underscores while keeping the same words intact"
+        },
+        {
+          "id": "c",
+          "text": "Typoglycemia, where middle letters are scrambled but the word stays readable"
+        },
+        {
+          "id": "d",
+          "text": "Switching the text from uppercase to lowercase to avoid exact matches"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "ft-risk-data-leakage-scenario-1",
@@ -981,12 +1614,24 @@
       "type": "mcq",
       "prompt": "What does 'emergent capabilities' mean in the context of scaling laws?",
       "options": [
-        { "id": "a", "text": "The ability to deploy models faster to production" },
-        { "id": "b", "text": "New capabilities that appear suddenly as compute/data scale up, not visible in smaller models" },
-        { "id": "c", "text": "The model's ability to cache results" },
-        { "id": "d", "text": "The speed at which the model runs inference" }
+        {
+          "id": "a",
+          "text": "The ability to deploy models to production more quickly as surrounding tooling and infrastructure improve"
+        },
+        {
+          "id": "b",
+          "text": "The model's built-in mechanism for caching prior answers during inference"
+        },
+        {
+          "id": "c",
+          "text": "A measure of how efficiently a model uses compute at serving time"
+        },
+        {
+          "id": "d",
+          "text": "New abilities that appear at larger scales but are absent in smaller models"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "d"
     },
     {
       "id": "ft-fundamentals-context-strategy-1",
@@ -1007,12 +1652,24 @@
       "type": "mcq",
       "prompt": "What is a common pitfall when AI assists with project time estimation in software planning?",
       "options": [
-        { "id": "a", "text": "AI estimates are always accurate" },
-        { "id": "b", "text": "AI may underestimate complexity or overlook unknowns without domain expertise" },
-        { "id": "c", "text": "AI cannot process estimation requests" },
-        { "id": "d", "text": "Human estimates are always worse than AI estimates" }
+        {
+          "id": "a",
+          "text": "AI may underestimate complexity without domain context"
+        },
+        {
+          "id": "b",
+          "text": "AI cannot reason about effort or sequencing in software projects at all"
+        },
+        {
+          "id": "c",
+          "text": "Human estimates are always less reliable than model-generated estimates"
+        },
+        {
+          "id": "d",
+          "text": "Estimation prompts are too open-ended for LLMs to handle usefully"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "a"
     },
     {
       "id": "ft-planning-architecture-ai-1",
@@ -1033,12 +1690,24 @@
       "type": "mcq",
       "prompt": "What is the recommended minimum unit test coverage for AI-generated code in production systems?",
       "options": [
-        { "id": "a", "text": "10% – spot checks only" },
-        { "id": "b", "text": "50% – basic coverage" },
-        { "id": "c", "text": "≥80% – required to catch hallucinations and logic errors" },
-        { "id": "d", "text": "Testing is unnecessary for AI code" }
+        {
+          "id": "a",
+          "text": "About 10 percent, enough for a few representative spot checks"
+        },
+        {
+          "id": "b",
+          "text": "At least 80 percent to help catch logic errors and hallucinated behavior"
+        },
+        {
+          "id": "c",
+          "text": "Around 50 percent, which is usually enough for baseline confidence in simple systems"
+        },
+        {
+          "id": "d",
+          "text": "No minimum is needed because generated code can validate itself"
+        }
       ],
-      "correctOptionId": "c"
+      "correctOptionId": "b"
     },
     {
       "id": "ft-dev-pr-review-checklist-1",
@@ -1060,12 +1729,24 @@
       "type": "mcq",
       "prompt": "What is the safest automation model for AI to assist with infrastructure changes in production?",
       "options": [
-        { "id": "a", "text": "Full automation – AI executes all changes without human approval" },
-        { "id": "b", "text": "Read-only + approval gates – AI diagnoses, humans approve before destructive actions" },
-        { "id": "c", "text": "No automation – humans handle everything manually" },
-        { "id": "d", "text": "AI with unlimited tool access for speed" }
+        {
+          "id": "a",
+          "text": "Let the AI apply any production change automatically for faster recovery"
+        },
+        {
+          "id": "b",
+          "text": "Avoid automation completely and require humans to do every diagnostic step"
+        },
+        {
+          "id": "c",
+          "text": "Keep the AI read-focused and require approval before destructive actions"
+        },
+        {
+          "id": "d",
+          "text": "Grant the AI unrestricted access so it can react without waiting on people"
+        }
       ],
-      "correctOptionId": "b"
+      "correctOptionId": "c"
     },
     {
       "id": "ft-ops-runbook-integration-1",

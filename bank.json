@@ -879,7 +879,7 @@
         { "id": "a", "text": "It slows down operations unnecessarily" },
         { "id": "b", "text": "It tracks what actions AI took for compliance, debugging, and detecting excessive agency patterns" },
         { "id": "c", "text": "It eliminates the need for human monitoring" },
-        { "d": "It guarantees AI decisions are always correct" }
+        { "id": "d", "text": "It guarantees AI decisions are always correct" }
       ],
       "correctOptionId": "b"
     },

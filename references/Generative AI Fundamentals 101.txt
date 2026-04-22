@@ -1,0 +1,100 @@
+Generative AI Fundamentals 101
+Created by Adani Arisy for Mekari 2026
+
+Table of Contents
+What is Generative AI?
+What Made it Possible?
+Key Capabilities
+Limitations
+Terminology Deep Dive: Context Window, RAG, and Tools 
+
+3
+What is Generative AI?
+Generative AI Fundamentals 101
+ 
+Feature
+Traditional (Discriminative) AI
+Generative AI
+Primary Goal
+To classify or predict
+To create or generate
+Output
+A label, a score, or a "Yes/No"
+Text, images, audio, or code
+Logic
+Follows rules or finds boundaries
+Learns patterns to replicate them
+Data Needs
+Smaller, structured datasets
+Massive, unstructured datasets
+Vibe
+Analytical and precise
+Creative and adaptive
+
+What Made It Possible?
+3 crucial developments that come together
+Generative AI Fundamentals 101
+
+Scaling Laws 
+Capabilities emerges as compute and data grew larger
+Generative AI Fundamentals 101
+
+
+Next Token Prediction
+Most LLMs use transformer model which predicts next token
+Generative AI Fundamentals 101
+
+
+Key Capabilities
+Versatile Language Skill
+Reasoning Step by Step
+Adapting to Task With Minimal Instructions
+Learning From Examples
+Connecting to External Tools
+
+Knowledge Cutoff
+Potential Hallucinations
+Context Window
+Non-deterministic Output
+Amount of information AI can process at one time.
+Once the input exceed the window, AI cannot recall the information.
+The freshness limit of the training data. Agent need external tools like search engine to know recent events.
+AI confidently stating something that sounds plausible but actually incorrect.
+Different responses even when given the same prompt. It is great for creativity but need to be careful when accuracy and consistency is critical.
+Limitations
+
+Input context is the only thing user can control to reduce hallucinations.
+That’s why prompt quality is very important.
+Why LLMs Hallucinate?
+
+Vague instructions makes AI guess what you want which is prone to hallucination.
+Use Tools & Verification Loop
+Give multiple examples or patterns for AI to follow to strengthen model’s understanding.
+Use tools to inject relevant context from trusted sources (e.g. Context7).
+Use tools to verify agent output correctness (e.g., browser MCP to check resulting web page) 
+Mitigating Hallucinations
+Clear, Specific Instructions
+Give Examples
+
+The “working memory” of the model.
+While some models boast up to millions of context window, research shows that the amount of information a model can actively "keep in mind" to perform complex logic like coding is significantly smaller.
+Generative AI Fundamentals 101
+Context Window
+
+Instead of loading everything into the window, the system searches a database for only the most relevant snippets and feeds them to the model as needed.
+Summarization / Compaction
+Shrinks large amounts of data into a dense, high-level overview to fit more "meaning" into the same number of tokens. It prioritizes density over detail.
+AI Platform Strategy vs Context Window
+RAG
+P.S. Copilot use RAG-style indexing & retrieval on the codebase while Serena MCP use retrieval but does not index using vector DB.
+
+Integrate with search engine to browse the public internet and retrieve information about present events or additional data to reduce hallucinations.
+Integrate with specialized data source to get information:
+Context7 MCP to get latest library documentation.
+Atlassian MCP to get knowledge from internal/proprietary documentation
+Strategy vs Knowledge Cutoff
+Search Engine Integration
+MCP Integration
+
+AI Continues to Improve
+

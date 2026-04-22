@@ -1,0 +1,174 @@
+Made by Adani Arisy for Mekari 2026
+Basic AI Interactions Framework
+
+Prompt Engineering
+
+Context Engineering
+
+How to Design an Environment to Interact with AI and Get the Most Out of It
+What You’ll Learn Today
+You’ll Learn:
+
+4D Concepts
+Pitfalls & Limitations of LLM System
+What is an Agent?
+Common Tools & Customization for Agents
+
+The 4D Framework
+
+The 4D Framework
+
+
+Delegation
+Envisioning an effective goal for a project.
+
+Understanding the nature and requirements of the task(s) towards the defined goal.
+Balancing AI and human capabilities throughout a project to best realize the creative
+vision.
+
+Ability to assign project tasks to human and AI tools optimally.
+
+Task Delegation
+Knowledge of various AI platforms and their specific strengths and limitations in relation to the project’s goal.
+
+Ability to evaluate AI tools based on project requirements, budget, operational and regulatory needs
+
+
+Goal & Task Awareness
+Platform Awareness
+Creative vision and selection of the right AI tools and techniques to realize that vision
+
+Description
+Creating a collaborative environment where both you and the AI can work effectively together
+
+Description in Action
+Prompt:
+
+I need to add a feature to track usage on my SaaS app. Write the code for a metering service. Use a database for it.go ahead and write the full code. Make no mistake. Thanks.
+
+6 Core Prompting Techniques
+Give context
+Show examples
+Specify constraints
+Break complex tasks into steps
+Ask the AI to think first
+Define the AI's role or tone
+
+Discernment
+Focuses on evaluating the quality of actual outputs (accuracy, appropriateness, coherence, relevance)
+Product Discernment
+Assessing how the AI arrived at its output, looking for logical errors, attention gaps, or inappropriate reasoning
+Process Discernment
+Evaluates how the AI behaves within the collaboration process itself, considering whether its communication style is effective for your needs
+Performance Discernment
+Thoughtfully evaluating AI outputs, processes, and behaviors
+
+The Core Loop
+Specify the problem
+Clearly explain why it is a problem
+Provide concrete suggestions for improvement
+Revise instruction or example
+
+Continue vs Restart?
+
+Is this an AI Agent?
+
+Is this an AI Agent?
+
+
+Is this an AI Agent?
+
+
+
+Example of Tools
+Github Copilot
+Claude Code
+
+MCP
+Open standard for how LLM apps interact with external services.
+
+Allows 3rd party services to publish one single MCP client/server to be used by any LLM apps.
+
+Example usage:
+Copilot retrieve PRD content from Confluence.
+Claude Code use Chrome DevTools  MCP to interact with web app and take a screenshot.
+
+MCP Extends Agent Capability by Giving It Extra Tools
+Example Tools by Atlassian MCP:
+getConfluencePage: Get a Confluence page or live doc by ID, with body as Markdown.
+createConfluenceInlineComment: Create an inline comment or reply tied to selected text.
+editJiraIssue: Update fields on an existing Jira issue.
+
+Example Tools by Grafana MCP:
+search_logs: Search logs across ClickHouse and Loki
+query_prometheus_histogram: Calculate histogram percentile values.
+create_alert_rule: Create a new alert rule.
+
+Skills vs Subagent
+What: Basically a reusable custom prompt
+
+When to use: Reusable context, specific reference docs, repeatable tasks.
+
+Context: Use main agent context window
+
+Example: create-api-spec skill to create a new entry on api-spec.yaml
+Agent Skill
+What: Like reusable custom prompt, but it runs on isolated execution context that returns summarized results.
+
+When to use: Context isolation, parallel tasks, specialized workers
+
+Context: Isolated from the main agent.
+
+Example: Research task that reads many files but returns only key findings
+Subagent
+
+B.      Create Custom Subagent
+Create Agent Skill
+Example
+I want to run a security analysis at the end of every code change that is made by AI agent. Which one should I use?
+Why?
+
+Isolated context. Main Agent context would not add noise and context rot to the security analysis subagent.
+Can be run in parallel with other subagent. For example: you might have other subagents that runs unit test & code quality verification.
+
+Let’s create a custom (sub)agent!
+Task
+Design a Subagent to perform a security audit of the codebase using Semgrep scanning.
+
+Scope:
+Web App codebase
+Current uncommitted changes
+
+Output:
+Findings + references to the code (files + lines)
+Mapping to relevant OWASP top 10 (if applicable)
+CVSS scoring of the findings
+
+Important Notes: Limit the tools only to necessary tools
+
+Result
+---
+name: perform-security-review
+description: Perform a read-only web application security review and return findings with file/line evidence and CVSS scoring.
+argument-hint: Repository scope, target folders/files, framework context, and any review focus areas (auth, API, secrets, SSRF, etc.).
+tools: ['read', 'search', 'web', 'semgrep/*']
+---
+You are a **web application security reviewer**.
+
+## Mission
+Review the current working tree changes for web application vulnerabilities using OWASP Top 10 (2021) as the primary framework, then report concrete findings with exact file and line evidence and a CVSS score.
+
+## Strict Tool/Behavior Constraints
+- Allowed operations: code reading, code search, web lookup for security references, and Semgrep MCP security scans.
+- Allowed MCP server: `semgrep` only (all Semgrep tools via `semgrep/*`).
+- Disallowed MCP servers: any MCP server other than `semgrep`.
+- Forbidden operations: editing files, creating files, deleting files, running commands, installing packages, changing environment, or any write action.
+- If a requested action requires write/execute permissions, refuse that part and continue with read-only review.
+
+## Required Review Flow
+1. Use web search to refresh OWASP Top 10 references before analysis.
+2. Inspect the target repository with read/search and Semgrep MCP (`semgrep/*`) scan results.
+3. Map discovered issues to one or more OWASP categories when applicable.
+4. Produce evidence-backed findings with file + line references.
+5. Assign CVSS v3.1 base score and vector for each finding.
+

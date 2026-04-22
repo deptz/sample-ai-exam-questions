@@ -1,0 +1,164 @@
+Created by Adani Arisy for Mekari
+March 2026
+AI Workshop for Devs
+
+What is harness engineering?
+Harness Engineering
+Agent Skill
+Hook
+Custom (Sub)agent
+Workshop Format
+MCP
+
+Harness Engineering
+The practice of leveraging coding agent’s configuration points to:
+
+Customize and improve your coding agent's output quality and reliability.
+Have it serve a wider range of use cases beyond coding
+Coding Agent 
+=
+AI model(s)
++
+Harness
+
+Agent Architecture
+
+Harness Configuration Points
+
+Add reusable knowledge and invocable workflows
+Run their own loops in isolated context, returning summaries
+Connect agent to external tools and services.
+Run deterministic scripts on multiple points across agent execution lifecycle.
+Coding Agent Configuration Points
+Skills
+Custom (Sub)agent
+Hooks
+MCP
+
+Reusable content, reference docs, repeatable tasks
+When to use it?
+/front-end-design skill can be used to create beautiful landing page that avoids generic AI aesthetics.
+Agent Skills
+Example
+my-skill/
+├── SKILL.md          # Required: instructions + metadata
+├── scripts/          # Optional: executable code
+├── references/       # Optional: documentation
+└── assets/           # Optional: templates, resources
+
+Example: MCP Builder Skill
+MCP Server Evaluation Harness. This script evaluates MCP servers by running test questions against them using AI model.
+Lightweight connection handling for MCP servers.
+---
+name: mcp-builder
+description: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).
+---
+Documentations so that AI agent can use the skill and scripts properly
+
+Create a new agent that can be started by the user (main agent) or started by another agent (subagent).
+Example
+Running security review subagent & build validation subagent in parallel
+When to use?
+When you need context isolation, parallel tasks, or specialized workers.
+Custom (Sub)agent
+
+Example: TDD with subagent
+
+MCP
+Integrate agent with external services so that it can obtain additional data or perform new actions.
+When to use?
+You want your agent to obtain data from and perform action to external services.
+Example
+Atlassian MCP: get JIRA ticket details, comment on confluence document.
+
+MCP as abstraction layer
+
+Grafana MCP
+Query LOKI logs and metrics for faster incident response. Can even create dashboard automatically
+Chrome DevTools MCP
+Control your browser and perform action of the browser like testing app flows, taking screenshots, and debugging javascript failure
+
+Context7
+Get up to date documentation of any library or dependencies.
+
+Paper MCP
+AI-native Figma alternative, have your AI design ready to use mock up. Sync between mock up and codebase.
+Examples of Useful MCPs
+
+Hooks
+When to use?
+To intercept or trigger scripted actions when certain condition is fulfilled before/after certain event.
+Example
+Log every tool calls to a file for auditing
+Prevent an agent from stopping unless certain conditions are met
+
+Example: Run Prettier After Edit
+.github/hooks/format.json
+
+
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "npx prettier --write \"$TOOL_INPUT_FILE_PATH\""
+      }
+    ]
+  }
+}
+
+Example: Log tool usage for auditing
+
+.github/hooks/audit.json
+
+
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "./scripts/log-tool-use.sh",
+        "env": {
+          "AUDIT_LOG": ".github/hooks/audit.log"
+        }
+      }
+    ]
+  }
+}
+
+scripts/log-tool-use.sh
+
+
+#!/bin/bash
+INPUT=$(cat)
+TIMESTAMP=$(echo "$INPUT" | jq -r '.timestamp')
+TOOL_NAME=$(echo "$INPUT" | jq -r '.tool_name')
+SESSION_ID=$(echo "$INPUT" | jq -r '.sessionId')
+
+echo "[$TIMESTAMP] Session: $SESSION_ID, Tool: $TOOL_NAME" >> "${AUDIT_LOG:-audit.log}"
+echo '{"continue":true}'
+
+
+Example: Werewolf Game
+
+Agent Setup
+https://github.com/adani/agentic-werewolf
+
+Next Step for Workshop
+Workshop Themes & Group Assignment 
+Pick the problem you want to solve as a group
+Write down your planned solution before the group session
+At your batch’s session later, When your group is done creating the solution, upload the agentic solution on a gdrive folder, open the access for all Mekari, and put the link on the gsheet.
+ 
+IMPORTANT: Follow the Template Problem + Solution on gsheet
+
+Workshop Session
+Batch 5 Theme: Software Operation
+Join your group breakout room
+Facilitator will join rotate and join each breakout room for 5-10 mins each:
+Discuss problem statement
+Discuss solution & tools/customization
+At 17:40, breakout room will be closed and everyone must join the main room.
+2 chosen group will demo their solution @ 5 mins demo + 5 mins Q&A.
+Every group must upload their solution to Google Drive, share to all Mekari, and add the link to column F.
+
